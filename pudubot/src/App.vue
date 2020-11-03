@@ -26,8 +26,8 @@ body {
 }
 
 #app {
-
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -53,7 +53,7 @@ body {
 .sidenav a {
   padding: 12px 16px 12px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   display: block;
 }
