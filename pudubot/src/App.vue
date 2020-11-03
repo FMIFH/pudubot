@@ -32,7 +32,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-  background: lightgray;
+  /*background: lightgray;*/
+  background-image: url("./assets/background.png");
   height: 100vh;
 }
 /* The sidebar menu */
