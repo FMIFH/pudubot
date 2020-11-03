@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo2.png">
-  <HomePage msg="Welcome to Microsegur Pudubot App"/>
+  <HomePage msg="Welcome To Microsegur Pudubot Aplication"/>
   <div class="sidenav">
     <a href="#">Register Robot</a>
     <a href="#">Register Client</a>
