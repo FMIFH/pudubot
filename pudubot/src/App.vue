@@ -2,9 +2,9 @@
   <img alt="Vue logo" src="./assets/logo2.png">
   <HomePage msg="Welcome To Microsegur Pudubot Aplication"/>
   <div class="sidenav">
-    <a href="#">Register Robot</a>
-    <a href="#">Register Client</a>
-    <a href="#">Dashboards</a>
+    <a href="robot">Register Robot</a>
+    <a href="cliente">Register Client</a>
+    <a href="dashboards">Dashboards</a>
   </div>
 </template>
 
@@ -69,4 +69,4 @@ body {
   margin-left: 160px; /* Same as the width of the sidebar */
   padding: 0px 10px;
 }
-</style>
+</style>  
