@@ -1,9 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div>
-      <img alt ="" src="../assets/pudubot.jpg">
-    </div>
+    <img alt="MCS logo" class="img1" src="../assets/logo2.png">  
+    <h1>Welcome To Microsegur Pudubot Aplication</h1>
+    <img alt ="img2" class="img2" src="../assets/pudubot.jpg">
   </div>
 </template>
 
@@ -21,8 +20,9 @@ export default {
 h1 {
   color: navy;
 }
-img {
+
+.img2 {
   border-radius: 8px;
-  height: 70vh;
+  height: 50vh;
 }
 </style>

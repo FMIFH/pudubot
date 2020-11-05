@@ -1,11 +1,6 @@
 <template>
-  <div>
-    <img alt="MCS logo" src="../assets/logo2.png">
-    <HomePage msg="Welcome To Microsegur Pudubot Aplication"/>
-  </div>
-  <div class="sidenav">
-    <Sidebar></Sidebar>
-  </div>
+  <Sidebar></Sidebar>
+  <HomePage></HomePage>
 </template>
 
 <script>
@@ -23,13 +18,8 @@ export default {
 
 <style>
 body {    
-    margin: 0;
-    padding: 0 ;
-}
-
-
-
-#home{
+  margin: 0;
+  padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
