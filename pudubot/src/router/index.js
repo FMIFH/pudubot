@@ -14,7 +14,7 @@ const routes = [
   },
   {
     path: '/robots',
-    name: 'Robot',
+    name: 'Robots',
     component: () => import('../views/Robot.vue')
   },
 
