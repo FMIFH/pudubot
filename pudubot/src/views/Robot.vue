@@ -7,8 +7,12 @@
             </div>
         </div>
     </div>
-    <div id ="registrRobot">
-        <form action=""></form>
+    <div id ="registerRobot">
+        <form class="registerRobot_newRegist" @submit.prevent="registerRobot">
+            <label for="newRobot"><strong>Register New Robot</strong></label>
+            <textarea id="newRobot" cols="20" rows="1" v-model="newRobotId"></textarea>
+            <button>Submit</button>
+        </form>
     </div>
     <div class = "sidenav">
         <Sidebar></Sidebar>
@@ -28,6 +32,7 @@ export default {
     
     data(){
         return{
+            newRobotId: '',
             robot: {},
             api : 'http://microsegur.ddns.net:3006'
         }
@@ -44,6 +49,26 @@ export default {
 
         checkAvaialbility: (robot) => {
             return robot.available;
+        },
+
+        registerRobot : async function() {
+            if(this.newRobotId){
+                const data = {
+                    robotid: this.newRobotId
+                };
+
+                console.log(data);
+                await fetch(this.api+'/robot',
+                {
+                    headers: {
+                        "content-type":"application/json"
+                    },
+                    body: data,
+                    method: "POST"
+                }).then(data => {return data.json})
+                .then(res => {console.log(res)})
+                .catch(error => console.log(error));
+            }
         }
     },
 
@@ -68,12 +93,24 @@ body {
 }
 
 .RobotInfo{
-    margin: 10px;
+    height: 60vh;
+    padding: 10px;
 }
 .displayRobots {
-    margin: 10px;
+    padding: 10px;
     align-content: center;
+}
 
+.registerRobot_newRegist{
+    width: 50%;
+    text-align: center;
+}
+form{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    flex-direction: column;
 }
 
 .available {
