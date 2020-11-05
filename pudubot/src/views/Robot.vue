@@ -8,7 +8,7 @@
         </div>
     </div>
     <div id ="registerRobot">
-        <form class="registerRobot_newRegist" @submit.prevent="registerRobot">
+        <form class="registerRobot_newRegist" @submit="registerRobot">
             <label for="newRobot"><strong>Register New Robot</strong></label>
             <textarea id="newRobot" cols="20" rows="1" v-model="newRobotId"></textarea>
             <button>Submit</button>
@@ -54,7 +54,7 @@ export default {
         registerRobot : async function() {
             if(this.newRobotId){
                 const data = {
-                    robotid: this.newRobotId
+                    "robotid" : this.newRobotId
                 };
 
                 console.log(data);
@@ -63,12 +63,13 @@ export default {
                     headers: {
                         "content-type":"application/json"
                     },
-                    body: data,
+                    body: JSON.stringify(data),
                     method: "POST"
                 }).then(data => {return data.json})
                 .then(res => {console.log(res)})
                 .catch(error => console.log(error));
             }
+            
         }
     },
 
