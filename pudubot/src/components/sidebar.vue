@@ -1,6 +1,6 @@
 <template>
     <a href="home"> Home</a>
-    <a href="robot">Register Robot</a>
+    <a href="robots">Register Robot</a>
     <a href="cliente">Register Client</a>
     <a href="dashboards">Dashboards</a>
 </template>
