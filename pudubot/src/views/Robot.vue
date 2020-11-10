@@ -1,7 +1,8 @@
 <template>
     <Sidebar></Sidebar>
     <div class="container">
-    <h1> {{robotid}} </h1>
+    <h1> {{robotid}}</h1>
+    <h3> Total Distance: {{robotTotalDistance}}</h3>
     
     <div class="row mt-5" v-if="robotDistanceArray.length > 0">
         <div class="col">
@@ -34,6 +35,7 @@ export default {
             api : 'http://microsegur.ddns.net:3006',
             robotid : computed(() => this.route().params.robotid),
             robot : {},
+            robotTotalDistance : 0,
             robotDistanceArray : [],
             distanceChartColors: {
                 borderColor: "#077187",
@@ -59,7 +61,7 @@ export default {
             }
         },
 
-        getDistance : async function(){
+        getMovements : async function(){
             const response = await fetch(this.api +`/robotposition?robotid=eq.${this.robotid}`);
             if(response.ok){
                 const responseJson = await response.json();
@@ -71,10 +73,12 @@ export default {
                         y
                     } = d;
 
+                    this.robotTotalDistance += distance;
                     this.robotDistanceArray.push({date: ts, total: distance});
                     this.robotPositionsArray.push({date: x, total: y});
                 });
             }
+            this.robotTotalDistance = Math.round(this.robotTotalDistance);
         },
 
         route : () => {return useRoute()}
@@ -83,7 +87,7 @@ export default {
 
     mounted() {
         this.getRobots(),
-        this.getDistance()
+        this.getMovements()
     }    
 }
 </script>
