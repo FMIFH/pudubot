@@ -1,10 +1,14 @@
 <template>
     <div class="RobotInfo">
         <h1>Robots</h1>
-        <div class="displayRobots" v-for="r in robot" :key="r.robotid" >
-            <div class="static" v-bind:class="{available: checkAvaialbility(r), inUse: !checkAvaialbility(r)}">
-               <strong> {{r.robotid}} </strong>
-            </div>
+        <div class="displayRobots"  v-for="r in robot" :key="r.robotid">
+            <strong> 
+                    <div class="static" v-bind:class="{available: checkAvaialbility(r), inUse: !checkAvaialbility(r)}">  
+                        <router-link :to="{ name: 'Robot', params: { robotid: r.robotid }}" >
+                            {{r.robotid}}
+                        </router-link>
+                    </div>
+            </strong>
         </div>
     </div>
 </template>
@@ -39,6 +43,8 @@ export default {
 </script>
 
 <style>
+
+
 h1{
     color: navy;
 }
@@ -51,11 +57,15 @@ h1{
     padding: 10px;
     align-content: center;
 }
-.available {
+a {
+    text-decoration: none;
+
+}
+.available a{
     color: green;
 }
 
-.inUse {
+.inUse a{
     color: red;
 }
 

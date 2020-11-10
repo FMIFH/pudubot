@@ -15,13 +15,18 @@ const routes = [
   {
     path: '/robots',
     name: 'Robots',
-    component: () => import('../views/Robot.vue')
+    component: () => import('../views/Robots.vue')
   },
   {
     path: '/clients',
     name: 'Clients',
     component: () => import('../views/Clients.vue')
-  }
+  },
+  {
+    path: '/robots/:robotid',
+    name: 'Robot',
+    component: () => import('../views/Robot.vue')
+  },
 
 ]
 
